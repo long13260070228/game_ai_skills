@@ -8,6 +8,7 @@
 
 ```text
 game-ai-skills/
+├── gameai_openspec_from_doc
 ├── gameai_analyze_requirement
 ├── gameai_testcase_generator
 ├── gameai_analyze_activity
@@ -24,6 +25,7 @@ game-ai-skills/
 
 | Skill | 作用 |
 |---|---|
+| gameai_openspec_from_doc | 输入需求文字 / 文档，融合分析并生成 OpenSpec change（proposal / design / specs / tasks） |
 | gameai_analyze_requirement | 游戏需求分析，拆解客户端、服务端、配置、接口、风险点 |
 | gameai_testcase_generator | 根据需求生成测试用例和开发自测清单 |
 | gameai_analyze_activity | 捕鱼活动专项需求分析，重点关注强发库、库存、掉落、房间和炮倍 |
@@ -35,6 +37,12 @@ game-ai-skills/
 | gameai_check_performance | 游戏性能检查 |
 
 ## 推荐用法
+
+### OpenSpec 需求转方案
+
+```text
+使用 gameai_openspec_from_doc 把 docs/活动需求.docx 转成 OpenSpec change（proposal/design/specs/tasks）
+```
 
 ### 需求分析
 
@@ -110,6 +118,8 @@ git clone https://github.com/touchatoms/game_skills.git ~/.claude/skills/game-ai
 
 ```text
 ~/.claude/skills/
+├── gameai_openspec_from_doc/
+│   └── SKILL.md
 ├── gameai_analyze_requirement/
 │   └── SKILL.md
 ├── gameai_testcase_generator/
@@ -178,6 +188,8 @@ codex --version
 ```text
 .codex/
 └── skills/
+    ├── gameai_openspec_from_doc/
+    │   └── SKILL.md
     ├── gameai_analyze_requirement/
     │   └── SKILL.md
     ├── gameai_testcase_generator/
@@ -202,6 +214,7 @@ codex --version
 
 ```bash
 mkdir -p /path/to/game-project/.codex/skills
+cp -R gameai_openspec_from_doc /path/to/game-project/.codex/skills/
 cp -R gameai_analyze_requirement /path/to/game-project/.codex/skills/
 cp -R gameai_testcase_generator /path/to/game-project/.codex/skills/
 cp -R gameai_analyze_activity /path/to/game-project/.codex/skills/

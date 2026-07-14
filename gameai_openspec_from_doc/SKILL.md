@@ -1,5 +1,5 @@
 ---
-name: gameai-openspec-from-doc
+name: gameai_openspec_from_doc
 description: 输入一段需求文字，或输入一个或多个需求/设计/接口文档，自动归一化输入→分类分析→融合生成 OpenSpec change（proposal/design/tasks/specs），最后进入 explore 讨论。
 license: MIT
 metadata:
