@@ -18,6 +18,7 @@ game-ai-skills/
 ├── gameai_code_review_cocos_creator
 ├── gameai_check_release
 ├── gameai_check_performance
+├── gameai_h5_project_migration_check
 └── README.md
 ```
 
@@ -35,6 +36,7 @@ game-ai-skills/
 | gameai_code_review_cocos_creator | Cocos Creator / Cocos2d 代码审查 |
 | gameai_check_release | 游戏发版前检查 |
 | gameai_check_performance | 游戏性能检查 |
+| gameai_h5_project_migration_check | 项目迁移审查 |
 
 ## 推荐用法
 
@@ -96,6 +98,12 @@ game-ai-skills/
 
 ```text
 使用 gameai_check_performance 分析这个活动界面卡顿问题
+```
+
+### H5项目迁移
+
+```text
+/gameai_h5_project_migration_check 项目审查 /Users/long/Desktop/projects/CocosCreator/h5newgame/h5newgame_client_wheel
 ```
 
 ## Claude Code 使用方式

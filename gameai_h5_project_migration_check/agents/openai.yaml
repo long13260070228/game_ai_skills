@@ -1,0 +1,4 @@
+interface:
+  display_name: "H5 项目迁移"
+  short_description: "迁移或审查 Cocos H5 客户端及 tools_h5 全部迁移相关内容"
+  default_prompt: "使用 $gameai_h5_project_migration_check，按授权范围推进迁移或只读审查客户端与 tools_h5 的全部迁移相关内容。"

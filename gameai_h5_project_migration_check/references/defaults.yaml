@@ -1,0 +1,6 @@
+# 首次由用户明确提供后填写；null 表示尚未配置，不是自动推断值。
+developer_pinyin: null
+user_name: null
+tools_h5: null
+# 可选，以目标平台为键，值为经确认的参考项目路径或仓库地址。
+platform_references: {}
