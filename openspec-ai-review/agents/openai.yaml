@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenSpec AI Review"
+  short_description: "仅报告客户端未解决问题事实，HTML 存入 SVN 并同步飞书"
+  default_prompt: "使用 $openspec-ai-review 审核指定分支的客户端业务代码，排除后端联调与配置辅助，只报告未解决问题事实，不输出已实现项、结论、证据状态、需求状态、验证状态和文档证据。仅在对应 SVN 目录生成自包含 HTML 并同步发送飞书，不输出图片或其他资源。"

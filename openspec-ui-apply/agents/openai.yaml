@@ -1,0 +1,4 @@
+interface:
+  display_name: "UIApply · Unity UI 生产制作"
+  short_description: "根据设计效果图和美术资源制作 Unity UI Prefab，并校验绑定与视觉效果"
+  default_prompt: "使用 $openspec-ui-apply；先提供并确认设计效果图路径、UI 资源路径、Prefab 保存路径和 Prefab 资源命名，再制作并验收对应 Unity Prefab。"

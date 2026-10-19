@@ -1,0 +1,5 @@
+config.local.json
+*.local.json
+__pycache__/
+*.pyc
+review_cache/

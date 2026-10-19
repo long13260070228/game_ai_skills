@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "project": "newproject_client",
+  "default_mode": "review-publish",
+  "git": {
+    "executable": "git",
+    "local_path": "D:/WorkSpace/your_client_project",
+    "url": "https://git.example.com/team/newproject_client.git",
+    "username": "YOUR_GIT_USERNAME",
+    "auth": "credential-manager-or-ssh",
+    "review_cache": "C:/ReviewCache/newproject_client"
+  },
+  "versions": [
+    {
+      "version": "1.2.0",
+      "target_branch": "release/1.2.0",
+      "base_branch": "master",
+      "openspec_changes": ["openspec/changes/REPLACE_WITH_CHANGE_ID"],
+      "documents": [
+        {"id": "requirements", "kind": "requirements", "source": "target", "path": "openspec/changes/REPLACE_WITH_CHANGE_ID/specs"},
+        {"id": "api", "kind": "api", "source": "local", "path": "C:/ReviewDocuments/1.2.0/api.md"},
+        {"id": "design", "kind": "design", "source": "target", "path": "openspec/changes/REPLACE_WITH_CHANGE_ID/design.md"}
+      ]
+    }
+  ],
+  "svn": {
+    "executable": "svn",
+    "working_copy": "C:/SVN/ClientReviewReports",
+    "report_root": "C:/SVN/ClientReviewReports/客户端",
+    "repository_url": "https://svn.example.com/reports/client",
+    "username": "YOUR_SVN_USERNAME",
+    "auth": "local-cache"
+  },
+  "feishu": {
+    "app_id": "YOUR_FEISHU_APP_ID",
+    "app_secret_env": "OPENSPEC_REVIEW_FEISHU_APP_SECRET",
+    "chat_id": "oc_REPLACE_WITH_CLIENT_U3D_CHAT_ID",
+    "chat_name": "客户端开发-U3D"
+  }
+}
