@@ -110,8 +110,21 @@ game-ai-skills/
 
 ### 固定版本与证据审查
 
+完整调用示例（路径、分支及提交按实际项目替换）：
+
 ```text
-使用 $game_ai_review_version_evidence，基于指定仓库、基线/目标版本与允许资料独立审查，并将结果写入指定输出目录。
+使用 $game_ai_review_version_evidence，按当前 skill 默认规则完成独立审查、核证及交付。
+
+仓库：/Users/long/Desktop/projects/ff3d/ff3d_client
+目标：develop_1.9.0
+目标提交：0992f67679b2240633548bd9241d401e51766816
+基线：master
+基线提交：147a73be68a70c7b0f907312bcfab8c8dc78dcc5
+完整输入：/Users/long/Desktop/projects/ff3d/评审文档1
+输出根目录：/Users/long/Desktop/projects/3D捕鱼新测试/
+
+以指定提交为准，冻结实际 skill 版本及全部输入文件 SHA-256。
+新建本轮独立输出目录，交付一个 HTML 阅读入口、一个证据 ZIP 及 SHA-256 校验文件。
 ```
 
 完整用法及边界见 [技能说明](game_ai_review_version_evidence/SKILL.md)。
