@@ -1,0 +1,4 @@
+interface:
+  display_name: "版本与证据审查"
+  short_description: "固定版本及来源边界，独立发现并核证缺陷、需求差异和历史行为"
+  default_prompt: "使用 $game_ai_review_version_evidence，基于指定版本与允许来源独立审查，交付带证据和来源标记的报告。"

@@ -19,6 +19,7 @@ game-ai-skills/
 ├── gameai_check_release
 ├── gameai_check_performance
 ├── gameai_h5_project_migration_check
+├── game_ai_review_version_evidence
 └── README.md
 ```
 
@@ -37,6 +38,7 @@ game-ai-skills/
 | gameai_check_release | 游戏发版前检查 |
 | gameai_check_performance | 游戏性能检查 |
 | gameai_h5_project_migration_check | 项目迁移审查 |
+| game_ai_review_version_evidence | 固定版本与证据审查，独立核证新增及历史问题 |
 
 ## 推荐用法
 
@@ -105,6 +107,14 @@ game-ai-skills/
 ```text
 /gameai_h5_project_migration_check 项目审查 /Users/long/Desktop/projects/CocosCreator/h5newgame/h5newgame_client_wheel
 ```
+
+### 固定版本与证据审查
+
+```text
+使用 $game_ai_review_version_evidence，基于指定仓库、基线/目标版本与允许资料独立审查，并将结果写入指定输出目录。
+```
+
+完整用法及边界见 [技能说明](game_ai_review_version_evidence/SKILL.md)。
 
 ## Claude Code 使用方式
 
