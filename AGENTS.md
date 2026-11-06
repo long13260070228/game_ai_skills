@@ -2,6 +2,9 @@
 
 本项目使用 game-ai-skills 作为团队 AI 协作规范。
 
+新增、更新或发布本仓库 Skill 时，按 [贡献固定流程](CONTRIBUTING.md) 执行。
+复用已有分支、PR 和有效验证；Git 写操作以当前会话的明确授权为准。
+
 ## Skill 使用规则
 
 当用户要求“把需求转成 OpenSpec”“生成 proposal / design / specs”“从文档生成技术方案”时，优先使用：

@@ -20,6 +20,9 @@ game-ai-skills/
 ├── gameai_check_performance
 ├── gameai_h5_project_migration_check
 ├── game_ai_review_version_evidence
+├── game_ai_merge_review
+├── game_ai_branch_history_review
+├── game_ai_review_shared  # 拆分入口共享工作流与工具
 └── README.md
 ```
 
@@ -38,7 +41,9 @@ game-ai-skills/
 | gameai_check_release | 游戏发版前检查 |
 | gameai_check_performance | 游戏性能检查 |
 | gameai_h5_project_migration_check | 项目迁移审查 |
-| game_ai_review_version_evidence | 固定版本与证据审查，独立核证新增及历史问题 |
+| [game_ai_review_version_evidence](game_ai_review_version_evidence/SKILL.md) | 固定版本综合审查，默认兼查新增和历史问题；逐项反馈＋最终统一交付（v5.13.1-feedback） |
+| [game_ai_merge_review](game_ai_merge_review/SKILL.md) | 仅查分支或 MR 合入引起的问题，历史不计新增（共享 v5.14.1-split） |
+| [game_ai_branch_history_review](game_ai_branch_history_review/SKILL.md) | 固定分支现存缺陷、历史遗留及需求遗漏（共享 v5.14.1-split） |
 
 ## 推荐用法
 
@@ -128,6 +133,44 @@ game-ai-skills/
 ```
 
 完整用法及边界见 [技能说明](game_ai_review_version_evidence/SKILL.md)。
+
+### 审查入口选择与安装
+
+综合版本审查用 `game_ai_review_version_evidence`；明确区分“合并引入”和“分支现存问题”时，分别用后两个入口。
+逐项反馈规则仅在综合入口明确配置，不能默认认为拆分入口已同步；定稿不代表三者完成了同等程度的对照测试。
+
+`game_ai_review_version_evidence` 是综合审查入口，替代此前的 `review-version-evidence` 名称。
+`game_ai_review_shared` 仅供两个拆分入口共享工作流与工具，不是 Skill 入口。
+安装两个拆分入口时，须把它与入口目录一起复制到同一 skills 根目录；Codex 默认是 `~/.codex/skills/`，自定义时设置 `CODEX_HOME`。
+单独安装综合入口时复制完整 `game_ai_review_version_evidence` 目录即可。
+
+### 分支或 MR 合入审查
+
+```text
+使用 $game_ai_merge_review，审查源分支合入目标分支引起的问题。
+仓库：/path/to/client
+源分支：develop_1.9.0
+源提交：<源完整SHA>
+合入目标分支：master
+目标基线提交：<目标完整SHA>
+完整输入：/path/to/评审文档
+输出根目录：/path/to/合并审查输出
+历史已有问题不计新增；冻结入口、共享工作流及全部输入 SHA-256。
+```
+
+也可提供 MR 链接、允许资料与输出根目录，由入口解析并冻结实际版本。
+
+### 固定分支历史审查
+
+```text
+使用 $game_ai_branch_history_review，审查指定固定分支现存的问题。
+仓库：/path/to/client
+被审分支：master
+被审提交：<完整SHA>
+完整输入：/path/to/评审文档
+输出根目录：/path/to/历史审查输出
+本轮为单分支审查，无对照基线；冻结入口、共享工作流及全部输入 SHA-256。
+```
 
 ## Claude Code 使用方式
 
@@ -346,26 +389,12 @@ gameai_check_release
 上线
 ```
 
-## GitHub 推送方式
+## Skill 贡献与发布
 
-如果你本地还没有初始化仓库：
+统一流程：**确定范围 → 修改 Skill 和示例 → 验证 → Fork 分支提交 PR → 维护者审核合并**。
 
-```bash
-git init
-git add .
-git commit -m "init game ai skills"
-git branch -M main
-git remote add origin https://github.com/touchatoms/game_skills.git
-git push -u origin main
-```
-
-如果仓库已经存在：
-
-```bash
-git add .
-git commit -m "add game ai skills"
-git push
-```
+首次认证、人工 GitHub 操作、AI 授权模板及异常处理见 [贡献固定流程](CONTRIBUTING.md)。
+同一任务复用已有分支和 PR；安装与实际调用验证按交付范围单独记录。
 
 ## 后续可扩展 Skills
 
