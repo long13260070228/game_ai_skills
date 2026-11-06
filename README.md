@@ -389,6 +389,27 @@ gameai_check_release
 上线
 ```
 
+## GitHub 推送方式
+
+如果你本地还没有初始化仓库：
+
+```bash
+git init
+git add .
+git commit -m "init game ai skills"
+git branch -M main
+git remote add origin https://github.com/touchatoms/game_skills.git
+git push -u origin main
+```
+
+如果仓库已经存在：
+
+```bash
+git add .
+git commit -m "add game ai skills"
+git push
+```
+
 ## Skill 贡献与发布
 
 统一流程：**确定范围 → 修改 Skill 和示例 → 验证 → Fork 分支提交 PR → 维护者审核合并**。
